@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  
+  --color-neon-cyan: #00f3ff;
+  --color-neon-magenta: #ff00ff;
+  --color-neon-yellow: #f3ff00;
+  --color-dark-navy: #0a0a1a;
+}
+
+@layer utilities {
+  .animate-pulse-neon {
+    animation: pulse-neon 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-neon {
+    0%, 100% {
+      box-shadow: 0 0 5px var(--color-neon-cyan), 0 0 10px var(--color-neon-cyan);
+    }
+    50% {
+      box-shadow: 0 0 20px var(--color-neon-cyan), 0 0 30px var(--color-neon-cyan);
+    }
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  }
+  
+  .text-glow-magenta {
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  }
+}
+
+body {
+  background-color: var(--color-dark-navy);
+  color: white;
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
